@@ -1,0 +1,37 @@
+
+package com.example;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/SessionTrack")
+public class SessionTrack extends HttpServlet {
+
+    public void doGet(HttpServletRequest req,
+                      HttpServletResponse res)
+                      throws IOException {
+
+        res.setContentType("text/html");
+
+        Cookie c = new Cookie("user", "Student");
+        res.addCookie(c);
+
+        HttpSession s = req.getSession();
+
+        String t = req.getParameter("t");
+
+        if (t != null)
+            s.setAttribute("history",
+                s.getAttribute("history") == null ? t :
+                s.getAttribute("history") + ", " + t);
+
+        res.getWriter().println("Cookie: " + c.getValue());
+        res.getWriter().println("<br>History: " +
+            s.getAttribute("history"));
+
+        res.getWriter().println(
+            "<form><input name='t'><input type='submit' value='Add'></form>");
+    }
+}

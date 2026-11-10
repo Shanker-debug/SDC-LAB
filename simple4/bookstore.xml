@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+
+<bookstore>
+  <book>
+    <title>Java</title>
+    <author>John</author>
+    <price>450</price>
+  </book>
+</bookstore>
