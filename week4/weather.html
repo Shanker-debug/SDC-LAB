@@ -2,16 +2,18 @@
 <html>
 <head>
     <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <input type="text" id="city" value="Hyderabad">
-    <button onclick="getWeather()">Get Weather</button>
+<h2>Weather App</h2>
 
-    <div id="weather"></div>
+<input id="city" value="Hyderabad">
+<button onclick="getWeather()">Get Weather</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="script.js"></script>
+<canvas id="chart"></canvas>
+
+<script src="script.js"></script>
 
 </body>
 </html>

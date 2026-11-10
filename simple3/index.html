@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>ES6 Features</h2>
+
+<script>
+
+// 1. Arrow Function
+let add = (a, b) => a + b;
+console.log("Arrow Function:", add(10, 20));
+
+// 2. Callback Function
+function display(callback) {
+    callback();
+}
+
+display(() => console.log("Callback Function"));
+
+// 3. Promise
+let promise = new Promise((resolve) => {
+    resolve("Promise Successful");
+});
+
+promise.then(result => console.log(result));
+
+// 4. Async and Await
+async function show() {
+    let result = await promise;
+    console.log("Async/Await:", result);
+}
+
+show();
+
+</script>
+</body>
+</html>
